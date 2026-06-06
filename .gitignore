@@ -1,0 +1,27 @@
+venv/
+
+__pycache__/
+*.pyc
+
+data/raw/
+data/processed/
+data/processed_tiled/
+models/
+
+mlruns/
+
+.DS_Store
+
+.env
+
+# Outputs
+inference_outputs/
+runs/
+
+# Model weights
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+venv/
