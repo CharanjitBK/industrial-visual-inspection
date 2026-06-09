@@ -6,8 +6,6 @@ An AI-powered industrial defect detection system for steel surface inspection us
 
 The project focuses on detecting and classifying surface defects from steel images, evaluating model performance through multiple experiments, and tracking results using MLflow.
 
----
-
 ## Dataset
 
 ### NEU Surface Defect Database
@@ -28,7 +26,6 @@ The dataset contains six defect categories:
 - Dataset tiling for improved small-defect detection
 - Label validation using OpenCV
 
----
 
 ## Tech Stack
 
@@ -47,8 +44,6 @@ The dataset contains six defect categories:
 - Git
 - GitHub
 
----
-
 ## Training Pipeline
 
 1. Dataset preparation
@@ -57,8 +52,6 @@ The dataset contains six defect categories:
 4. Model evaluation
 5. MLflow experiment tracking
 6. Model selection
-
----
 
 ## Experiments Conducted
 
@@ -80,8 +73,6 @@ The dataset contains six defect categories:
 - Batch size: 16
 - Learning rate: 0.01
 
----
-
 ## Experiment Results
 
 | Model   | Dataset | Image Size | mAP50  | mAP50-95 |
@@ -91,8 +82,6 @@ The dataset contains six defect categories:
 | YOLO11n  | Tiled   | 320        | 0.7580 | 0.4382   |
 | YOLO11s  | Tiled   | 320        | 0.7572 | 0.4371   |
 | YOLO11m  | Tiled   | 320        | 0.7509 | 0.4361   |
-
----
 
 ## Best Model
 
@@ -110,8 +99,6 @@ The dataset contains six defect categories:
 | mAP50       | 0.7814 |
 | mAP50-95    | 0.4546 |
 
----
-
 ## MLflow Tracking
 
 MLflow was used for:
@@ -121,8 +108,6 @@ MLflow was used for:
 - Logging hyperparameters
 - Storing evaluation metrics
 - Saving model artifacts
-
----
 
 ## Key Findings
 
