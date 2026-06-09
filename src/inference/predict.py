@@ -7,7 +7,7 @@ def main():
     model = YOLO("runs/detect/models/yolo11s_neu-4/weights/best.pt")
 
     # Input image
-    image_path = "data/processed/images/val/crazing_4_0.jpg"
+    image_path = "data/processed_tiled/images/val/crazing_4_0.jpg"
     image = cv2.imread(image_path)
 
     # Run inference
