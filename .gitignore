@@ -24,4 +24,7 @@ runs/
 # Python
 __pycache__/
 *.pyc
+venv/mlflow.db
+mlruns/
+runs/
 venv/
