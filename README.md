@@ -193,16 +193,9 @@ MLflow was used for:
 
 ## Key Findings
 
-<<<<<<< HEAD
-- YOLO11s outperformed YOLO11n and YOLO11m on this dataset
-- 640×640 input resolution performed better than 320×320
-- Dataset tiling improved detection of small defects
-- Best configuration achieved strong balance between precision and recall
-=======
 * YOLO11s achieved the best overall performance on the NEU dataset
 * 640 × 640 image resolution outperformed 320 × 320
 * Dataset tiling improved detection performance for small defects
 * MLflow simplified experiment comparison and model selection
 * FastAPI successfully deployed the trained model as an inference service
 * Risk scoring and visualization enhanced the interpretability of predictions
->>>>>>> ce59f53 (Add FastAPI defect detection API with risk scoring)
