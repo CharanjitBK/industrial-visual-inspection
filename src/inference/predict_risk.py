@@ -2,18 +2,16 @@ from ultralytics import YOLO
 import cv2
 import os
 
-# ======================
 # MODEL LOAD
-# ======================
+
 MODEL_PATH = "runs/detect/train-12/weights/best.pt"
 model = YOLO(MODEL_PATH)
 
 CLASS_NAMES = model.names  # IMPORTANT
 
 
-# ======================
 # PREDICTION FUNCTION
-# ======================
+
 def predict(image_path):
     results = model(image_path)
 
@@ -34,9 +32,8 @@ def predict(image_path):
     return detections
 
 
-# ======================
 # RISK ENGINE (IMPROVED)
-# ======================
+
 def compute_risk(detections):
 
     if not detections:
@@ -73,9 +70,8 @@ def compute_risk(detections):
     }
 
 
-# ======================
 # VISUALIZATION
-# ======================
+
 def save_visualization(image_path, detections, output_path="inference_outputs/result.jpg"):
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -99,28 +95,36 @@ def save_visualization(image_path, detections, output_path="inference_outputs/re
         )
 
     cv2.imwrite(output_path, img)
-    print(f"📸 Saved visualization to: {output_path}")
+    print(f" Saved visualization to: {output_path}")
 
-
-# ======================
 # FULL PIPELINE
-# ======================
+
 def run_pipeline(image_path):
 
     detections = predict(image_path)
+
     risk = compute_risk(detections)
 
-    save_visualization(image_path, detections)
+    output_path = (
+        f"inference_outputs/"
+        f"annotated_{os.path.basename(image_path)}"
+    )
+
+    save_visualization(
+        image_path,
+        detections,
+        output_path
+    )
 
     return {
         "defects": detections,
-        "risk": risk
+        "risk": risk,
+        "annotated_image": output_path
     }
 
 
-# ======================
 # MAIN
-# ======================
+
 if __name__ == "__main__":
 
     image_path = "data/processed_tiled/images/val/inclusion_1_0.jpg"
